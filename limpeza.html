@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatriq - Limpeza</title>
+
+    <link rel="stylesheet" href="CSS/main.css" />
+    <link rel="stylesheet" href="CSS/limpeza.css" />
+    <link rel="icon" type="image/png" href="assets/logo relatriq.png">
+    <link rel="stylesheet" href="CSS/escuro.css" />
+</head>
+
+<body>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-botao" aria-label="Abrir ou fechar o menu"></label>
+    <label for="menu-toggle" class="menu-fundo"></label>
+    <aside class="menu">
+        <h2 class="logo">Relatriq</h2>
+        <ul>
+            <a href="index.html">Início</a>
+            <a href="planilhas.html">Planilhas</a>
+            <a href="limpeza.html" class="ativo">Ferramentas de limpeza</a>
+            <a href="relatorio.html">Relatórios</a>
+            <a href="configuracoes.html">Configurações</a>
+        </ul>
+
+        <a href="#" class="login">👤 Login</a>
+    </aside>
+
+    <main class="conteudo">
+
+        <h1>Ferramentas de limpeza</h1>
+        <p class="subtitulo">Corrija a planilha com um clique.</p>
+
+
+        <div class="caixa" id="avisoSemPlanilha" hidden>
+            <h2>Nenhuma planilha carregada</h2>
+            <p class="vazio">Envie uma planilha na página Planilhas para usar as ferramentas.</p>
+            <a href="planilhas.html" class="botao link-botao">Ir para Planilhas</a>
+        </div>
+
+        <div id="conteudoLimpeza" hidden>
+
+            <div class="caixa">
+                <h2>Ferramentas de limpeza</h2>
+
+                <div class="grupo-botoes">
+                    <button class="botao botao-claro" id="btnEspacos">Remover espaços extras</button>
+                    <button class="botao botao-claro" id="btnVazias">Remover linhas vazias</button>
+                    <button class="botao botao-claro" id="btnDuplicadas">Remover duplicadas</button>
+                    <button class="botao botao-claro" id="btnNumeros">Converter textos em números</button>
+                </div>
+
+                <p id="mensagem"></p>
+            </div>
+
+            <div class="caixa">
+                <h2 id="tituloPrevia">Prévia</h2>
+                <p class="subtitulo" id="infoPlanilha"></p>
+                <div class="rolagem">
+                    <table id="tabelaPrevia"></table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="JS/main.js"></script>
+    <script src="JS/limpeza.js"></script>
+</body>
+
+</html>

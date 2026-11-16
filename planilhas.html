@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatriq - Planilhas</title>
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="CSS/planilhas.css">
+    <link rel="stylesheet" href="CSS/escuro.css" />
+    <link rel="icon" type="image/png" href="assets/logo relatriq.png">
+</head>
+
+<body>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-botao" aria-label="Abrir ou fechar o menu"></label>
+    <label for="menu-toggle" class="menu-fundo"></label>
+    <aside class="menu">
+        <h2 class="logo">Relatriq</h2>
+        <ul>
+            <a href="index.html">Início</a></li>
+            <a href="planilhas.html" class="ativo">Planilhas</a>
+            <a href="limpeza.html">Ferramentas de limpeza</a>
+            <a href="relatorio.html">Relatórios</a>
+            <a href="configuracoes.html">Configurações</a>
+        </ul>
+        <a href="#" class="login">👤 Login</a>
+    </aside>
+
+    <main class="conteudo">
+
+
+        <section class="topo-planilhas">
+
+            <div class="titulo-area">
+                <img src="assets/exel.png" alt="Excel" class="icone-excel">
+                <div>
+                    <span class="etiqueta">Planilhas</span>
+                    <h1>Minhas Planilhas</h1>
+
+                    <p class="subtitulo">Gerencie as planilhas Excel que serão utilizadas para gerar seus relatórios.
+                    </p>
+                </div>
+            </div>
+
+
+            <button class="botao botao-nova" id="btnNova">⬆ Nova Planilha</button>
+            <input type="file" id="arquivo" accept=".xlsx, .xls" hidden>
+
+        </section>
+
+        <p id="mensagem"></p>
+
+
+        <section class="cards">
+
+            <div class="card">
+                <span class="card-icone verde">🗐</span>
+                <div>
+                    <p>Total de planilhas</p>
+                    <strong id="totalPlanilhas">0</strong>
+                    <small>Planilhas cadastradas</small>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-icone roxo">✓</span>
+                <div>
+                    <p>Planilhas ativas</p>
+                    <strong id="totalAtivas">0</strong>
+                    <small>Em uso no momento</small>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-icone cinza">⏲</span>
+                <div>
+                    <p>Planilhas inativas</p>
+                    <strong id="totalInativas">0</strong>
+                    <small>Não utilizadas no momento</small>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-icone roxo">🗁</span>
+                <div>
+                    <p>Espaço utilizado</p>
+                    <strong id="espacoUsado">0 KB</strong>
+                    <small>De 5 MB disponíveis</small>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="lista-area">
+
+            <div class="caixa tabela-caixa">
+                <h2>Lista de Planilhas</h2>
+                <p class="dica-toque">Toque em uma planilha da lista para ver os detalhes.</p>
+
+                <div class="area-upload" id="areaUpload">
+                    ☁️ <b>Arraste um .xlsx ou .xls aqui</b> ou <span class="link-roxo">clique para enviar</span>
+                    <small>Tudo é processado no seu navegador.</small>
+                </div>
+                <div class="rolagem">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome da planilha</th>
+                                <th>Tamanho</th>
+                                <th>Última atualização</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="corpoTabela"></tbody>
+                    </table>
+                </div>
+                <p class="vazio" id="semPlanilhas" hidden>Nenhuma planilha ainda. Envie a primeira para começar.</p>
+            </div>
+
+            <aside class="caixa detalhes" id="detalhes" hidden>
+                <div class="detalhes-topo">
+                    <img src="assets/exel.png" alt="" class="mini-excel">
+                    <div>
+                        <strong id="detNome"></strong>
+                        <small id="detTamanho"></small>
+                    </div>
+                </div>
+
+                <div class="detalhe-linha"><span>Status</span><b id="detStatus"></b></div>
+                <div class="detalhe-linha"><span>Última atualização</span><b id="detData"></b></div>
+                <div class="detalhe-linha"><span>Formato</span><b>xlsx (Excel)</b></div>
+                <div class="detalhe-linha"><span>Localização</span><b>Neste navegador</b></div>
+                <div class="detalhe-linha"><span>Linhas</span><b id="detLinhas"></b></div>
+                <div class="detalhe-linha"><span>Colunas</span><b id="detColunas"></b></div>
+            </aside>
+
+        </section>
+
+        <section class="caixa" id="caixaPrevia" hidden>
+            <h2>Verifique os dados</h2>
+            <p class="subtitulo" id="infoPlanilha"></p>
+            <div class="rolagem">
+                <table id="tabelaPrevia"></table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="JS/main.js"></script>
+    <script src="JS/planilhas.js"></script>
+</body>
+
+</html>

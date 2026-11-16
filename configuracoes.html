@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatriq - Configurações</title>
+    <link rel="stylesheet" href="CSS/main.css" />
+    <link rel="stylesheet" href="CSS/configuracoes.css" />
+    <link rel="stylesheet" href="CSS/escuro.css" />
+    <link rel="icon" type="image/png" href="assets/logo relatriq.png">
+</head>
+
+<body>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-botao" aria-label="Abrir ou fechar o menu"></label>
+    <label for="menu-toggle" class="menu-fundo"></label>
+    <aside class="menu">
+        <h2 class="logo">Relatriq</h2>
+        <ul>
+            <a href="index.html">Início</a>
+            <a href="planilhas.html">Planilhas</a>
+            <a href="limpeza.html">Ferramentas de limpeza</a>
+            <a href="relatorio.html">Relatórios</a>
+            <a href="configuracoes.html" class="ativo">Configurações</a>
+        </ul>
+        <a href="#" class="login">👤 Login</a>
+    </aside>
+
+    <main class="conteudo">
+
+        <h1>Configurações</h1>
+        <p class="subtitulo">Personalize o painel.</p>
+
+        <div class="caixa">
+            <h2>Preferências</h2>
+
+            <div class="opcao">
+                <label for="tema">Tema escuro</label>
+                <input type="checkbox" id="tema">
+            </div>
+
+            <div class="opcao">
+                <label for="idioma">Idioma</label>
+                <select id="idioma">
+                    <option>Português (Brasil)</option>
+                    <option>English</option>
+                </select>
+            </div>
+        </div>
+
+    </main>
+    <script src="JS/main.js"></script>
+</body>
+
+</html>
